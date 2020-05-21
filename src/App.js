@@ -1,9 +1,17 @@
-import React from "react";
-import logo from "./logo.svg";
+import React, { useState } from "react";
 import "./App.css";
+import TaskListContext from "./context/TaskListContext";
+import TaskList from "./components/TaskLists";
+import TaskListContextProvider from "./context/TaskListContext";
 
-function App() {
-  return <div className="App"></div>;
-}
+const App = () => {
+  return (
+    <TaskListContextProvider>
+      <div className="App">
+        <TaskList />
+      </div>
+    </TaskListContextProvider>
+  );
+};
 
 export default App;
