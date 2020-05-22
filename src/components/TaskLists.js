@@ -1,14 +1,15 @@
 import React, { useContext } from "react";
-import Context, { TaskListContext } from "../context/TaskListContext";
+import { TaskListContext } from "../context/TaskListContext";
 import Task from "./Task";
 
 const TaskList = () => {
-  const { state } = useContext(TaskListContext);
+  const { tasks } = useContext(TaskListContext);
+
   return (
     <div>
       <ul className="list">
-        {state.map((items) => {
-          return <Task task={items.task} id={items.id} key={items.id} />;
+        {tasks.map((task) => {
+          return <Task task={task} key={task.id} />;
         })}
       </ul>
     </div>
