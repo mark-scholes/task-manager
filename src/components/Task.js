@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 
-const Task = () => {
+const Task = ({ task }) => {
   return (
     <li className="list-item">
-      <span>Task Title</span>
+      <span>{task}</span>
       <div>
         <button className="btn-edit task-btn">
           <i className="fas fa-pen"></i>
